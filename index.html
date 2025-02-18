@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <style>
+        body {
+            font-family:Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #b289dd, #89a1cb);
+            color: #fff;
+        }
+        .otp-gen {
+            text-align: center;
+            background: rgba(252, 252, 252, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+         h1 {
+            margin-bottom: 20px;
+        }
+        input {
+            font-size: 1.2rem;
+            padding: 10px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background: #fff;
+            color: #333;
+        }
+         button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ef4545;
+            color: #fff;
+            cursor: pointer; 
+            
+        }
+        .otp-gen button:hover {
+            background: #d94848;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-gen">
+        <h1>OTP Generator</h1>
+        <input type="text" id="otp" placeholder="Your OTP ">
+        <br />
+        <button onclick="otp()">Generate OTP</button>
+    </div>
+
+    <script>
+        function otp(){
+            let otp=""
+            for(i=0;i<5;i++){
+             otp+=Math.floor(Math.random()*10)
+         }
+         document.getElementById('otp').value = otp;
+         console.log(otp)
+        }
+        otp()
+    </script>
+</body>
+</html>
